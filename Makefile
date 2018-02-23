@@ -13,10 +13,10 @@ $(NAME):				$(OBJ)
 					sudo $(CC) --shared -o $(NAME) $(OBJ)
 
 install:				installer.sh all
-					sudo ./installer.sh
+					sudo ./install.sh
 
 uninstall:				uninstaller.sh fclean
-					sudo ./uninstaller.sh
+					sudo ./uninstall.sh
 
 clean:
 					rm -f $(OBJ)

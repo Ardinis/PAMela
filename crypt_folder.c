@@ -73,7 +73,6 @@ int	check_container(char const* username)
     return (!PAM_SUCCESS);
   if (open(command, O_RDONLY) == -1)
     {
-      printf("Le container est prêt");
       if (sprintf(command, "apt-get install cryptsetup") == EXIT_FAILURE)
 	return (!PAM_SUCCESS);
       system(command);

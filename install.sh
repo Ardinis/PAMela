@@ -1,4 +1,4 @@
-if [ "./installer.sh" = $0 ]
+if [ "./install.sh" = $0 ]
 then
     if ! [ -f "/etc/pam.d/common-auth_bkp" ]
     then
@@ -27,10 +27,10 @@ then
 
     echo "Installation terminée"
     echo "\nsession optional pam_module.so\n" >> /etc/pam.d/common-session
-    mv installer.sh uninstaller.sh
+    mv install.sh uninstall.sh
 fi
 
-if [ "./uninstaller.sh" = $0 ]
+if [ "./uninstall.sh" = $0 ]
 then
  mv /etc/pam.d/common-auth_bkp /etc/pam.d/common-auth
     mv /etc/pam.d/common-session_bkp /etc/pam.d/common-session
@@ -39,5 +39,5 @@ then
     rm /lib/x86_64-linux-gnu/security/pam_module.so
 
     echo "Désinstallation terminée"
-    mv uninstaller.sh installer.sh
+    mv uninstall.sh install.sh
 fi

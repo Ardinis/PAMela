@@ -105,7 +105,7 @@ extern int	pam_sm_open_session(pam_handle_t *pamh, int flags, int argc, char con
 
   memset(command, 0, 1000);
   printf("Ouverture de la session\n");
-  if (pam_get_username(pamh, &username, NULL) != PAM_SUCCESS)
+  if (pam_get_user(pamh, &username, NULL) != PAM_SUCCESS)
     return (!PAM_SUCCESS);
   if (strcmp(username, "root") == 0)
     return (PAM_SUCCESS);
@@ -122,7 +122,7 @@ extern int	pam_sm_close_session(pam_handle_t *pamh, int flags, int argc, char co
   char const* username;
 
   printf("Feremeture de la session\n");
-  if (pam_get_username(pamh, &username, NULL) != PAM_SUCCESS)
+  if (pam_get_user(pamh, &username, NULL) != PAM_SUCCESS)
     return (!PAM_SUCCESS);
   if (strcmp(username, "root") == 0)
     return (PAM_SUCCESS);

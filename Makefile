@@ -12,10 +12,10 @@ $(NAME):				$(OBJ)
 					$(CC) -c -fpic $(SRC)
 					sudo $(CC) --shared -o $(NAME) $(OBJ)
 
-install:				installer.sh all
+install:				install.sh all
 					sudo ./install.sh
 
-uninstall:				uninstaller.sh fclean
+uninstall:				uninstall.sh fclean
 					sudo ./uninstall.sh
 
 clean:
